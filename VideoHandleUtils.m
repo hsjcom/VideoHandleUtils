@@ -257,7 +257,7 @@
 }
 
 - (void)removeLocalVideoFile:(NSString *)filePath {
-    if (![StringUtil isEmpty:filePath]) {
+    if (filePath.length > 0) {
         NSString *path = filePath;
         path = [path stringByReplacingOccurrencesOfString:@"file://" withString:@""];
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
@@ -292,7 +292,7 @@
         return;
     }
     NSString *filePath = [NSString stringWithFormat:@"%@", url];
-    if (![StringUtil isEmpty:filePath]) {
+    if (filePath.length > 0) {
         NSString *path = filePath;
         path = [path stringByReplacingOccurrencesOfString:@"file://" withString:@""];
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
